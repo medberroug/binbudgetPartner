@@ -53,7 +53,9 @@
 
                     <p class="my-2 text-sm font-semibold">Commandes</p>
                 </div>
-                <div class="flex flex-col items-center justify-center w-1/3 px-4 py-2 text-white bg-purple-600 rounded-xl">
+
+                <div class="flex flex-col items-center justify-center w-1/3 px-4 py-2 text-white bg-purple-600 rounded-xl"
+                    @click="$router.push('/app/rc/' + $route.params.menuID + '/manageMenu')">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                         stroke="currentColor" class="mt-2 w-9 h-9">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -61,6 +63,7 @@
                     </svg>
                     <p class="my-2 text-sm font-semibold">Menu</p>
                 </div>
+
                 <div class="flex flex-col items-center justify-center w-1/3 px-4 py-2 text-white bg-green-600 rounded-xl">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                         stroke="currentColor" class="mt-2 w-9 h-9">
@@ -88,7 +91,8 @@
             </div>
 
             <div v-if="!specialSpinner" class="mb-10">
-                <nuxt-link :to="'/app/rc/'+$route.params.menuID+'/'+day.dateLong" v-for="(day, index) in rcDays" :key="index">
+                <nuxt-link :to="'/app/rc/' + $route.params.menuID + '/' + day.dateLong" v-for="(day, index) in rcDays"
+                    :key="index">
                     <div class="w-auto px-4 py-4 mx-6 mt-4 bg-gray-100 border-l-4 border-green-600 rounded-2xl">
                         <div class="flex items-center justify-between">
                             <p class="text-2xl font-bold">

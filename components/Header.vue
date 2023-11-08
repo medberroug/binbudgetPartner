@@ -1,12 +1,11 @@
 <template>
     <div>
         <!-- Floating Div -->
-        <nuxt-link to="/">
-            <div class="fixed inset-x-0 z-50 flex items-center justify-center w-auto h-12 mx-4 text-center text-white rounded-full bottom-4 backdrop-blur-sm bg-black/30 ">
-                <!-- Content of floating div -->
+        <!-- <nuxt-link to="/">
+            <div class="fixed inset-x-0 flex items-center justify-center w-auto h-12 mx-4 text-center text-white rounded-full -z-40 bottom-4 backdrop-blur-sm bg-black/30 ">
                 XX
             </div>
-        </nuxt-link>
+        </nuxt-link> -->
         <!-- Top Header of the App -->
         <div class="flex items-center justify-between px-6 pt-4">
             <div class="text-2xl font-bold">

@@ -14,12 +14,12 @@
         <div class="px-6 mt-4">
           <p class="mb-1 text-sm font-semibold text-gray-600">Nom d'utilisateur</p>
           <input v-model="username" type="email"
-            class="w-full h-10 mx-auto bg-white border-2 rounded-lg focus:border-purple-600" name="">
+            class="w-full h-10 px-2 mx-auto bg-white border-2 rounded-lg focus:border-purple-600" name="">
         </div>
         <div class="px-6 mt-4">
           <p class="mb-1 text-sm font-semibold text-gray-600">Mot de passe</p>
           <input v-model="password" type="password"
-            class="w-full h-10 mx-auto bg-white border-2 rounded-lg focus:border-purple-600" name="">
+            class="w-full h-10 px-2 mx-auto bg-white border-2 rounded-lg focus:border-purple-600" name="">
         </div>
 
         <div class="flex justify-center mt-6">
@@ -50,9 +50,10 @@ export default {
   },
   methods: {
     test() {
-      console.log(this.username);
-      console.log(this.password);
-      this.$router.push("/app")
+      if(this.username=="admin" && this.password){
+        this.$router.push("/app")
+      }
+     
     }
   },
   
