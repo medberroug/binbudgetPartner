@@ -5,13 +5,13 @@
             <Header></Header>
             <div class="flex items-center justify-between px-4 text-xl font-bold mt-14">
                 <div class="flex items-center">
-                    <div class="w-2 h-2 mr-3 bg-green-600 rounded-full animate-ping">
+                    <div class="w-2 h-2 mr-3 bg-green-600 rounded-full">
                     </div>
                     Restauration Collective
                 </div>
-                <div class="mr-3 text-sm font-medium text-gray-400">
+                <!-- <div class="mr-3 text-sm font-medium text-gray-400">
                     Voir plus
-                </div>
+                </div> -->
             </div>
 
             <!-- <nuxt-link to="/app">

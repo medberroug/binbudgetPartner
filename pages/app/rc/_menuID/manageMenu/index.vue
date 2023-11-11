@@ -70,10 +70,10 @@
                 <div class="flex items-center justify-between mt-2">
                     <div class="w-3/5">
                         <p class="text-xs font-semibold text-gray-600">
-                            Réserver avant
+                            Réserver
                         </p>
                         <p class="font-semibold">
-                            {{ menu.hoursBeforeBlock }} <span class="ml-1 text-xs font-light text-gray-600">heures</span>
+                            {{ menu.hoursBeforeBlock }} <span class="ml-1 text-xs font-light text-gray-600">heures avant</span>
                         </p>
                     </div>
                     <div class="w-1/5">

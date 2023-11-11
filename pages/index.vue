@@ -11,6 +11,9 @@
       </div>
       <div class="w-auto px-2 py-3 mt-8 bg-gray-100 rounded-xl">
         <p class="mx-6 text-2xl font-semibold text-center text-purple-600 ">Se connecter</p>
+        <div class="px-2 py-2 mx-6 my-3 text-xs font-semibold text-white bg-red-600 rounded-lg" v-if="incorrectAuth">
+          Nom d'utilisateur ou mot de passe incorrect, veuillez réessayer.
+        </div>
         <div class="px-6 mt-4">
           <p class="mb-1 text-sm font-semibold text-gray-600">Nom d'utilisateur</p>
           <input v-model="username" type="email"
@@ -23,7 +26,8 @@
         </div>
 
         <div class="flex justify-center mt-6">
-          <button class="w-1/2 py-2 mx-12 text-sm font-bold text-white bg-purple-600 rounded-lg p-x3" @click="test()">Sign
+          <button class="w-1/2 py-2 mx-12 text-sm font-bold text-white bg-purple-600 rounded-lg p-x3"
+            @click="authUser()">Sign
             in</button>
         </div>
         <div class="mt-6 mb-2 text-center">
@@ -45,18 +49,39 @@ export default {
   data() {
     return {
       username: null,
-      password: null
+      password: null,
+      incorrectAuth: false,
     }
   },
   methods: {
     test() {
-      if(this.username=="admin" && this.password){
+      if (this.username == "admin" && this.password) {
         this.$router.push("/app")
       }
-     
+    },
+    async authUser() {
+      try {
+        let user = await this.$axios.$post("/auth/local", {
+          identifier: this.username,
+          password: this.password
+        })
+
+        if (user.user.role.name === "admin") {
+          this.$localController("set", { key: "authData", value: user })
+          this.$router.push('/app')
+        } else {
+          throw error
+        }
+
+        // console.log(authResult);
+      } catch (error) {
+        this.incorrectAuth = true
+        this.password = null
+      }
+
     }
   },
-  
+
 
 }
 </script>

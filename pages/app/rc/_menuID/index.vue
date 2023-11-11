@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="flex flex-col items-center justify-center w-1/3 px-4 py-2 text-white bg-purple-600 rounded-xl"
-                    @click="$router.push('/app/rc/' + $route.params.menuID + '/manageMenu')">
+                    @click="$router.replace('/app/rc/' + $route.params.menuID + '/manageMenu')">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                         stroke="currentColor" class="mt-2 w-9 h-9">
                         <path stroke-linecap="round" stroke-linejoin="round"
